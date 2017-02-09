@@ -11,14 +11,13 @@ import SystemConfiguration
 
 public class LeoReachability {
     
-    class func isThere() -> Bool
-    {
+    class func isThere() -> Bool {
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
         zeroAddress.sin_family = sa_family_t(AF_INET)
         
         let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
-            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) { zeroSockAddress in
                 SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
             }
         }
@@ -32,8 +31,6 @@ public class LeoReachability {
         return (isReachable && !needsConnection)
         
     }
-    
-   
     
 }
 
@@ -49,26 +46,18 @@ public class LeoReachability {
  
  */
 
-
-
-
-protocol Utilities
-{
+protocol Utilities {
 }
 
-extension NSObject:Utilities
-{
+extension NSObject: Utilities {
     
-    
-    enum ReachabilityStatus
-    {
+    enum ReachabilityStatus {
         case notReachable
         case reachableViaWWAN
         case reachableViaWiFi
     }
     
-    var currentReachabilityStatus: ReachabilityStatus
-    {
+    var currentReachabilityStatus: ReachabilityStatus {
         
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout<sockaddr_in>.size)
@@ -90,20 +79,16 @@ extension NSObject:Utilities
         if flags.contains(.reachable) == false {
             // The target host is not reachable.
             return .notReachable
-        }
-        else if flags.contains(.isWWAN) == true {
+        } else if flags.contains(.isWWAN) == true {
             // WWAN connections are OK if the calling application is using the CFNetwork APIs.
             return .reachableViaWWAN
-        }
-        else if flags.contains(.connectionRequired) == false {
+        } else if flags.contains(.connectionRequired) == false {
             // If the target host is reachable and no connection is required then we'll assume that you're on Wi-Fi...
             return .reachableViaWiFi
-        }
-        else if (flags.contains(.connectionOnDemand) == true || flags.contains(.connectionOnTraffic) == true) && flags.contains(.interventionRequired) == false {
+        } else if (flags.contains(.connectionOnDemand) == true || flags.contains(.connectionOnTraffic) == true) && flags.contains(.interventionRequired) == false {
             // The connection is on-demand (or on-traffic) if the calling application is using the CFSocketStream or higher APIs and no [user] intervention is needed
             return .reachableViaWiFi
-        }
-        else {
+        } else {
             return .notReachable
         }
     }

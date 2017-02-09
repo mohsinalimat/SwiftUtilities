@@ -9,17 +9,15 @@
 import Foundation
 import UIKit
 
-
 protocol JSONRepresentable
 {
-    var jsonStruct : AnyObject
-        {
+    var jsonStruct: AnyObject
+    {
         get
     }
 }
 
-
-protocol StructJSONSerializable : JSONRepresentable
+protocol StructJSONSerializable: JSONRepresentable
 {
     
 }
@@ -30,10 +28,10 @@ extension StructJSONSerializable
     {
         var representation = [String: AnyObject]()
         
-        
         for case let (label?, value) in Mirror(reflecting: self).children
         {
             
+            // print("->" ,value , type(of: value) ,"->" ,label , type(of: label) )
             
             switch value
             {
@@ -42,11 +40,14 @@ extension StructJSONSerializable
                 representation[label] = value.jsonStruct
                 
             case let value as AnyObject:
+                
                 // print("***************  ",type(of: value) , label )
                 
                 representation[label] = value
                 
             default:
+                
+                print("someMoretings ")
                 
                 break
             }
@@ -55,35 +56,31 @@ extension StructJSONSerializable
         return representation as AnyObject
     }
     
-    
-   
-    
     func toJsonObect() -> AnyObject
     {
         let jsonString = self.toJsonString()
         
         let data: NSData = jsonString!.data(using: String.Encoding.utf8)! as NSData
         
-    //    _: NSError?
+        //    _: NSError?
         
-        do {
+        do
+        {
             if let dictionaryOK = try JSONSerialization.jsonObject(with: data as Data, options: []) as? AnyObject
             {
-       
+                
                 return dictionaryOK
                 // parse JSON
             }
-        } catch
+        }
+        catch
         {
             print(error)
         }
         
-      //let jsonObject: AnyObject? =   JSONSerialization.JSONObjectWithData(data as Data, options: .readingOptions.allZeros) as AnyObject!
+        //let jsonObject: AnyObject? =   JSONSerialization.JSONObjectWithData(data as Data, options: .readingOptions.allZeros) as AnyObject!
         
-        
-        
-      //  a(data,     options: JSONSerialization.ReadingOptions.allZeros, error: &error)
-
+        //  a(data,     options: JSONSerialization.ReadingOptions.allZeros, error: &error)
         
         return "sdd" as AnyObject
     }
@@ -97,37 +94,32 @@ extension StructJSONSerializable
             return nil
         }
         
-        do {
+        do
+        {
             
-            
-            let  data = try JSONSerialization.data(withJSONObject: jsonStruct, options: [])
-            
-            
-            
+            let data = try JSONSerialization.data(withJSONObject: jsonStruct, options: [])
             
             return String(data: data, encoding: String.Encoding.utf8)
-        } catch {
+        }
+        catch
+        {
             return nil
         }
     }
     
     func toEncodingURLStr() -> String?
     {
-        let jsonObject = self.toJsonObect() as! [String : String]
+        let jsonObject = self.toJsonObect() as! [String: String]
         
-        let strEnove = jsonObject.map { $0.key + "=" + ($0.value.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed))! }
+        let strEnove = jsonObject.map { $0.key + "=" + ($0.value.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed))! }
         
-         let some =    strEnove.reduce("") { $0.isEmpty ? $1 : $0 + "&" + $1}
-        
-   
+        let some = strEnove.reduce("") { $0.isEmpty ? $1 : $0 + "&" + $1 }
         
         return some
         
     }
     
 }
-
-
 
 extension Date: StructJSONSerializable
 {
@@ -141,9 +133,7 @@ extension Date: StructJSONSerializable
     
 }
 
-
 /*
- 
  
  struct  Family : StructJSONSerializable
  {
@@ -160,7 +150,6 @@ extension Date: StructJSONSerializable
  
      -> var family: Family
  
- 
  }
  
  struct Car: StructJSONSerializable
@@ -168,7 +157,7 @@ extension Date: StructJSONSerializable
     var manufacturer: String
     var model: String
     var mileage: Float
-    
+ 
     -> var owner: Owner
  
  }
@@ -185,20 +174,13 @@ extension Date: StructJSONSerializable
                             )
  )
  
- 
  car.model = "Maruti"
- 
- 
  
  if let json   = car.toJsonString()
  {
  print(car)
  // print("asdd", type(of: json) , json)
  
- 
  }
-
- 
  
  */
-
