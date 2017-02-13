@@ -39,6 +39,14 @@ extension UIColor
 extension String
 {
     
+    func random6DigitString() -> String
+    {
+        let min: UInt32 = 100_000
+        let max: UInt32 = 999_999
+        let i = min + arc4random_uniform(max - min + 1)
+        return String(i)
+    }
+    
     enum Header: String
     {
         case http = "http://"
@@ -63,7 +71,7 @@ extension String
         {
             return header.rawValue + self
         }
-        
+            
         else
         {
             return self

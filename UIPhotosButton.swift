@@ -14,7 +14,7 @@ import UIKit
 
 /*
  
- Main peupose of this class is to store images in file managers and store paths in array and return that array to delegate class
+ Main peupose of this class is to store images in file managers and store paths in array and return that array to delegate class or closure
  
  */
 
@@ -46,6 +46,8 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
     @IBInspectable var isSingle: Bool = true
     
     var closureDidFinishPicking: ((_ images: [String]) -> ())?
+    
+    var closureDidFinishPickingAnImage: ((_ image: [String]) -> ())?
     
     var closureDidTap: (() -> ())?
     
@@ -102,7 +104,7 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
                 NSLog("Unable to create directory \(error.debugDescription)")
             }
         }
-        
+            
         else
         {
             print("file  exit ")
@@ -123,24 +125,33 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
                                    cancelTilte: "Cancel",
                                    otherButtons: "Camera", "Gallery",
                                    comletionHandler: { (index: Swift.Int) in
-                                       
-                                       print(index)
-                                       
-                                       if index == 0
-                                       {
-                                           
-                                           //  self.camera()
-                                           self.gallery()
-                                       }
-                                       else if index == 1
-                                       {
-                                           self.gallery()
-                                       }
-                                       else if index == 2
-                                       {
-                                           self.closureDidTapCancel?()
-                                       }
-                                       
+                                    
+                                    print(index)
+                                    
+                                    if index == 0
+                                    {
+                                        
+                                        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
+                                        {
+                                            self.camera()
+                                            
+                                        }
+                                        else
+                                        {
+                                            self.gallery()
+                                            
+                                        }
+                                        
+                                    }
+                                    else if index == 1
+                                    {
+                                        self.gallery()
+                                    }
+                                    else if index == 2
+                                    {
+                                        self.closureDidTapCancel?()
+                                    }
+                                    
         })
         
     }
@@ -148,8 +159,12 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
     private func gallery()
     {
         let imagePicker = UIImagePickerController()
+        
         imagePicker.delegate = self
+        
         imagePicker.allowsEditing = false
+        
+        imagePicker.sourceType = .photoLibrary
         
         let keywindow = UIApplication.shared.keyWindow
         
@@ -160,7 +175,19 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
     
     private func camera()
     {
+        let imagePicker = UIImagePickerController()
         
+        imagePicker.delegate = self
+        
+        imagePicker.allowsEditing = false
+        
+        imagePicker.sourceType = .camera
+        
+        let keywindow = UIApplication.shared.keyWindow
+        
+        let mainController = keywindow?.rootViewController
+        
+        mainController?.present(imagePicker, animated: true, completion: nil)
     }
     
     // MARK: ImagePicker view Delegate
@@ -178,6 +205,9 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
         do
         {
             try imageData?.write(to: filePath, options: .atomic)
+            
+            closureDidFinishPickingAnImage?([filePath.path])
+            
         }
         catch
         {
@@ -188,7 +218,7 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
             { [unowned self] () in
                 
                 if self.isSingle
-                
+                    
                 {
                     
                     self.closureDidFinishPicking?(self.imagePaths)
@@ -200,24 +230,32 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
                                                cancelTilte: "No",
                                                otherButtons: "Camera", "Gallery",
                                                comletionHandler: { [unowned self] (index: Swift.Int) in
-                                                   
-                                                   print(index)
-                                                   
-                                                   if index == 0
-                                                   {
-                                                       
-                                                       //  self.camera()
-                                                       self.gallery()
-                                                   }
-                                                   else if index == 1
-                                                   {
-                                                       self.gallery()
-                                                   }
-                                                   else if index == 2
-                                                   {
-                                                       self.closureDidFinishPicking?(self.imagePaths)
-                                                       
-                                                   }
+                                                
+                                                print(index)
+                                                
+                                                if index == 0
+                                                {
+                                                    
+                                                    if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
+                                                    {
+                                                        self.camera()
+                                                        
+                                                    }
+                                                    else
+                                                    {
+                                                        self.gallery()
+                                                        
+                                                    }
+                                                }
+                                                else if index == 1
+                                                {
+                                                    self.gallery()
+                                                }
+                                                else if index == 2
+                                                {
+                                                    self.closureDidFinishPicking?(self.imagePaths)
+                                                    
+                                                }
                     })
                 }
                 
@@ -238,7 +276,7 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
 }
 
 class PhotoAlertHelper: UIAlertController
-
+    
 {
     // make sure you have navigation  view controller
     
@@ -275,7 +313,7 @@ class PhotoAlertHelper: UIAlertController
         
         // 4
         scrollView.contentSize = CGSize(width: CGFloat(imagesPath.count) * height + (margin * CGFloat(imagesPath.count + 1)), height: height)
-        //  self.scrollView.delegate = self
+        
         
         print("images path are ", imagesPath)
         
@@ -285,10 +323,10 @@ class PhotoAlertHelper: UIAlertController
             
             alert.addAction(UIAlertAction(title: i, style: UIAlertActionStyle.default,
                                           handler: { (action: UIAlertAction!) in
-                                              
-                                              comletionHandler?(alert.actions.index(of: action)!)
-                                              
-                                          }
+                                            
+                                            comletionHandler?(alert.actions.index(of: action)!)
+                                            
+            }
             ))
             
         }
@@ -296,10 +334,10 @@ class PhotoAlertHelper: UIAlertController
         {
             alert.addAction(UIAlertAction(title: cancelTilte, style: UIAlertActionStyle.destructive,
                                           handler: { (action: UIAlertAction!) in
-                                              
-                                              comletionHandler?(alert.actions.index(of: action)!)
-                                              
-                                          }
+                                            
+                                            comletionHandler?(alert.actions.index(of: action)!)
+                                            
+            }
             ))
         }
         
@@ -321,10 +359,10 @@ class PhotoAlertHelper: UIAlertController
             
             alert.addAction(UIAlertAction(title: i, style: UIAlertActionStyle.default,
                                           handler: { (action: UIAlertAction!) in
-                                              
-                                              comletionHandler?(alert.actions.index(of: action)!)
-                                              
-                                          }
+                                            
+                                            comletionHandler?(alert.actions.index(of: action)!)
+                                            
+            }
             ))
             
         }
@@ -332,10 +370,10 @@ class PhotoAlertHelper: UIAlertController
         {
             alert.addAction(UIAlertAction(title: cancelTilte, style: UIAlertActionStyle.destructive,
                                           handler: { (action: UIAlertAction!) in
-                                              
-                                              comletionHandler?(alert.actions.index(of: action)!)
-                                              
-                                          }
+                                            
+                                            comletionHandler?(alert.actions.index(of: action)!)
+                                            
+            }
             ))
         }
         
@@ -377,6 +415,7 @@ extension UIApplication
         //
         //            return top
         //        }
+        
         return controller
     }
 }
