@@ -42,8 +42,8 @@ Nuke.loadImage(with: url, into: self.imgeVUerPic)
 ```
 ## UIPart
 ### Single Image
-![alt text](https://github.com/vijayvir/SwiftUtilities/blob/master/CountryCodes/CountryCodes/counrtyCodeSnapshot.png "Single Title Text 1")
+![alt text](https://github.com/vijayvir/SwiftUtilities/blob/master/UIbutton/UIbutton/Simulator%20Screen%20Shot%20-%20iPhone%207%20Plus%20-%202017-08-11%20at%2015.41.55.png "Single Title Text 1")
 
 ###  UIMultiplePhoto Image
 
-![alt text](https://github.com/vijayvir/SwiftUtilities/blob/master/CountryCodes/CountryCodes/counrtyCodeSnapshot.png "UIMultiplePhoto Title Text 1")
+![alt text](https://github.com/vijayvir/SwiftUtilities/blob/master/UIbutton/UIbutton/Simulator%20Screen%20Shot%20-%20iPhone%207%20Plus%20-%202017-08-11%20at%2015.42.21.png "UIMultiplePhoto Title Text 1")
