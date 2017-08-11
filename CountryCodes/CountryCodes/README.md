@@ -20,6 +20,6 @@ txtCountryCode.closureDidSelectCountry = { country in
 print(country)
 
 ```
-## UI
+## UIPart
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/vijayvir/SwiftUtilities/blob/master/CountryCodes/CountryCodes/counrtyCodeSnapshot.png "Logo Title Text 1")
