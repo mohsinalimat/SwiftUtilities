@@ -10,22 +10,19 @@ import UIKit
 
 import MBProgressHUD
 
-class LeoHud: NSObject
-{
-    
-    class func show(message: String = "Processing...", delegate: UIViewController, mode: MBProgressHUDMode = MBProgressHUDMode.indeterminate)
-    {
+class LeoHud: NSObject {
+
+    class func show(message: String = "Processing...", delegate: UIViewController, mode: MBProgressHUDMode = MBProgressHUDMode.indeterminate) {
         var load: MBProgressHUD = MBProgressHUD()
-        
+
         load = MBProgressHUD.showAdded(to: delegate.view, animated: true)
-        
+
         load.mode = mode
-        
-        if message.characters.count > 0
-        {
+
+        if message.characters.count > 0 {
             load.label.text = message
         }
-        
+
         //        case indeterminate
         //
         //        /// A round, pie-chart like, progress view.
@@ -43,19 +40,17 @@ class LeoHud: NSObject
         //        /// Shows only labels.
         //        case text
         //
-        
+
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        
+
     }
-    
-    class func hide(delegate: UIViewController)
-    {
-        DispatchQueue.main.async
-        {
+
+    class func hide(delegate: UIViewController) {
+        DispatchQueue.main.async {
             MBProgressHUD.hide(for: delegate.view, animated: true)
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            
+
         }
-        
+
     }
 }

@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  UIbutton
+//  CountryCodes
 //
 //  Created by vijay vir on 8/11/17.
 //  Copyright © 2017 vijay vir. All rights reserved.
@@ -10,23 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
-	@IBOutlet weak var btnSinglebutton: UIPhotosButton!
-
-	@IBOutlet weak var btnMultipleImages: UIPhotosButton!
-
+	@IBOutlet weak var txtCountryCode: CountryPickerTextField!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
-		btnMultipleImages.closureDidFinishPicking = { (_ images: [String]) -> Void  in
-
-			print(images)
+	
+		txtCountryCode.closureDidSelectCountry = { country in
+			
+			print(country)
+			
 		}
-
-		btnSinglebutton.closureDidFinishPickingAnImage = { images in
-
-			print(images)
-		}
-
+		
 		// Do any additional setup after loading the view, typically from a nib.
 	}
 
@@ -35,4 +29,6 @@ class ViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
+
 }
+

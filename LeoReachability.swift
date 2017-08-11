@@ -10,18 +10,18 @@ import Foundation
 import SystemConfiguration
 
 public class LeoReachability {
-    
+
     class func isThere() -> Bool {
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
         zeroAddress.sin_family = sa_family_t(AF_INET)
-        
+
         let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
             $0.withMemoryRebound(to: sockaddr.self, capacity: 1) { zeroSockAddress in
                 SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
             }
         }
-        
+
         var flags = SCNetworkReachabilityFlags()
         if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
             return false
@@ -29,9 +29,9 @@ public class LeoReachability {
         let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
         let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
         return (isReachable && !needsConnection)
-        
+
     }
-    
+
 }
 
 /*
@@ -50,19 +50,19 @@ protocol Utilities {
 }
 
 extension NSObject: Utilities {
-    
+
     enum ReachabilityStatus {
         case notReachable
         case reachableViaWWAN
         case reachableViaWiFi
     }
-    
+
     var currentReachabilityStatus: ReachabilityStatus {
-        
+
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout<sockaddr_in>.size)
         zeroAddress.sin_family = sa_family_t(AF_INET)
-        
+
         guard let defaultRouteReachability = withUnsafePointer(to: &zeroAddress, {
             $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {
                 SCNetworkReachabilityCreateWithAddress(nil, $0)
@@ -70,12 +70,12 @@ extension NSObject: Utilities {
         }) else {
             return .notReachable
         }
-        
+
         var flags: SCNetworkReachabilityFlags = []
         if !SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags) {
             return .notReachable
         }
-        
+
         if flags.contains(.reachable) == false {
             // The target host is not reachable.
             return .notReachable
@@ -92,7 +92,7 @@ extension NSObject: Utilities {
             return .notReachable
         }
     }
-    
+
 }
 
 // print(currentReachabilityStatus != .notReachable) //true connected
