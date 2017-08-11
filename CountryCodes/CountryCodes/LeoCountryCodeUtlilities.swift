@@ -1,13 +1,8 @@
-
 //  Created by vijay vir on 8/1/17.
 //  Copyright © 2017 vijay vir. All rights reserved.
 //
-
 /*
-
 Main purpose  to provide the world codes  in text field through the Pickerview
-
-
 */
 
 /* Working of the class
@@ -126,7 +121,7 @@ class CountryPickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDat
 
         var arraybutton: [UIBarButtonItem] = []
 
-        arraybutton.append(donebutton)
+     //   arraybutton.append(donebutton)
 
         arraybutton.append(space)
 
@@ -193,6 +188,7 @@ class CountryPickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDat
     }
 
     func pickerView(_: UIPickerView, didSelectRow row: Int, inComponent _: Int) {
+			
         let country: World.Country = world.countryList[row]
 
         self.text = "\(country.code)"
