@@ -1,10 +1,8 @@
+
+//  Created by vijay vir on 8/1/17.
+//  Copyright © 2017 vijay vir. All rights reserved.
 //
-//  UIMultiplePhotosButton.swift
-//  UIMultiplePhotos
-//
-//  Created by Apple on 15/12/16.
-//  Copyright © 2016 vijayvirSingh. All rights reserved.
-//
+
 import Foundation
 
 import UIKit
@@ -13,16 +11,42 @@ import UIKit
 
 /*
 
-Main peupose of this class is to store images in file managers and store paths in array and return that array to delegate class or closure
+Main purpose of this class is to store images in file managers and store paths in array and return that array to class through  delegate  or closure
 
 */
 
+// Use this below line to .plist .Why? To have access from the user to open the Gallery or Camera
 /*
+
+
 <key>NSCameraUsageDescription</key>
 <string>Access needed to use your camera.</string>
 
 <key>NSPhotoLibraryUsageDescription</key>
 <string>Access needed to photo gallery.</string>
+*/
+
+/* Working of the class
+
+Ist : make the outlet in class
+
+@IBOutlet weak var btnPhoto: UIPhotosButton!
+
+
+2nd : use the closure or delegate in view Did load method .
+
+btnPhoto.closureDidFinishPickingAnImage = { image in
+
+print(image)
+
+DispatchQueue.main.async {
+
+let url : URL = URL(fileURLWithPath: image.first!)
+
+Nuke.loadImage(with: url, into: self.imgeVUerPic)
+
+}
+}
 */
 
 let appNameUIPhotosButton = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
@@ -31,28 +55,30 @@ let rootFolder: String = "\(NSTemporaryDirectory())UIMultiplePhoto/"
 
 class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
-	/*
-	// Only override draw() if you perform custom drawing.
-	// An empty implementation adversely affects performance during animation.
-	override func draw(_ rect: CGRect) {
-	// Drawing code
-	}
-	*/
+	
 	// MARK: Outlets
 	
 	// MARK: Variables
 	
 	private var imagePaths = [String]()
 	
+	// This class have two option to select the images from Camera or Galler  . If isSingle is true It will select the an image and return to the class through delegate  or closure
+	
 	@IBInspectable var isSingle: Bool = true
 	
-	var closureDidFinishPicking: ((_ images: [String]) -> ())?
+	// Use this class to have multiple images .
 	
-	var closureDidFinishPickingAnImage: ((_ image: [String]) -> ())?
+	public var closureDidFinishPicking: ((_ images: [String]) -> ())?
 	
-	var closureDidTap: (() -> ())?
+	// Use this class to have single image.
 	
-	var closureDidTapCancel: (() -> ())?
+	public  var closureDidFinishPickingAnImage: ((_ image: [String]) -> ())?
+	
+	
+	public  var closureDidTap: (() -> ())?
+	
+	
+	public  var closureDidTapCancel: (() -> ())?
 	
 	// MARK: CLC
 	
