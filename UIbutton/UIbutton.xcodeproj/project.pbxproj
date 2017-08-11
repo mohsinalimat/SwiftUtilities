@@ -24,6 +24,7 @@
 		11201A221F3D8F6800B548DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11201A241F3D8F6800B548DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11201A2A1F3D8F8600B548DD /* UIPhotosButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPhotosButton.swift; sourceTree = "<group>"; };
+		11879EC61F3DA5E70010821B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 			children = (
 				11201A181F3D8F6800B548DD /* AppDelegate.swift */,
 				11201A1A1F3D8F6800B548DD /* ViewController.swift */,
+				11879EC61F3DA5E70010821B /* README.md */,
 				11201A2A1F3D8F8600B548DD /* UIPhotosButton.swift */,
 				11201A1C1F3D8F6800B548DD /* Main.storyboard */,
 				11201A1F1F3D8F6800B548DD /* Assets.xcassets */,
@@ -303,6 +305,7 @@
 				11201A291F3D8F6800B548DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
