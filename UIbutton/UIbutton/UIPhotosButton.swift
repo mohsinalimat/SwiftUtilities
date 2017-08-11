@@ -11,8 +11,11 @@ import UIKit
 
 /*
 
-Main purpose of this class is to store images in file managers and store paths in array and return that array to class through  delegate  or closure
+Main purpose of this class is to store images in file managers and store paths in array and return that array of paths*  to class through  delegate  or closure
 
+ paths*  :  images are going to save in /tmp/UIMultiplePhoto/  of app 
+  
+to empty the UIMultiplePhoto follder use class function : removeCache()
 */
 
 // Use this below line to .plist .Why? To have access from the user to open the Gallery or Camera

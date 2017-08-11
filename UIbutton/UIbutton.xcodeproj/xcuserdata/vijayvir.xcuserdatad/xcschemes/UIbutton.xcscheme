@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "11106F121F3D875600809467"
-               BuildableName = "SwiftUtilities.app"
-               BlueprintName = "SwiftUtilities"
-               ReferencedContainer = "container:SwiftUtilities.xcodeproj">
+               BlueprintIdentifier = "11201A141F3D8F6800B548DD"
+               BuildableName = "UIbutton.app"
+               BlueprintName = "UIbutton"
+               ReferencedContainer = "container:UIbutton.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "11106F121F3D875600809467"
-            BuildableName = "SwiftUtilities.app"
-            BlueprintName = "SwiftUtilities"
-            ReferencedContainer = "container:SwiftUtilities.xcodeproj">
+            BlueprintIdentifier = "11201A141F3D8F6800B548DD"
+            BuildableName = "UIbutton.app"
+            BlueprintName = "UIbutton"
+            ReferencedContainer = "container:UIbutton.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "11106F121F3D875600809467"
-            BuildableName = "SwiftUtilities.app"
-            BlueprintName = "SwiftUtilities"
-            ReferencedContainer = "container:SwiftUtilities.xcodeproj">
+            BlueprintIdentifier = "11201A141F3D8F6800B548DD"
+            BuildableName = "UIbutton.app"
+            BlueprintName = "UIbutton"
+            ReferencedContainer = "container:UIbutton.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "11106F121F3D875600809467"
-            BuildableName = "SwiftUtilities.app"
-            BlueprintName = "SwiftUtilities"
-            ReferencedContainer = "container:SwiftUtilities.xcodeproj">
+            BlueprintIdentifier = "11201A141F3D8F6800B548DD"
+            BuildableName = "UIbutton.app"
+            BlueprintName = "UIbutton"
+            ReferencedContainer = "container:UIbutton.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

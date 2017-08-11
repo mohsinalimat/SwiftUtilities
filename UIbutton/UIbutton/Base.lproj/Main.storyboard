@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A315i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIbutton" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkr-n1-PVF">
+                                <rect key="frame" x="68" y="84" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owh-oD-h8Y" customClass="UIPhotosButton" customModule="UIbutton" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <color key="backgroundColor" red="0.9994125962" green="0.4018217623" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Tap to Select Single Images ">
+                                            <color key="titleColor" red="0.093241550029999995" green="0.14796799420000001" blue="0.27723690870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="owh-oD-h8Y" firstAttribute="top" secondItem="vkr-n1-PVF" secondAttribute="top" id="AXf-aQ-I8s"/>
+                                    <constraint firstAttribute="bottom" secondItem="owh-oD-h8Y" secondAttribute="bottom" id="FmK-lD-ep0"/>
+                                    <constraint firstAttribute="height" constant="128" id="ME7-m7-5Ts"/>
+                                    <constraint firstAttribute="width" constant="240" id="hyB-b6-C48"/>
+                                    <constraint firstItem="owh-oD-h8Y" firstAttribute="leading" secondItem="vkr-n1-PVF" secondAttribute="leading" id="tlq-Og-kaE"/>
+                                    <constraint firstAttribute="trailing" secondItem="owh-oD-h8Y" secondAttribute="trailing" id="vZh-3y-BcO"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VT9-Xd-VGv">
+                                <rect key="frame" x="68" y="269" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wau-wC-7WF" customClass="UIPhotosButton" customModule="UIbutton" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <color key="backgroundColor" red="0.28999468680000001" green="0.83128076790000005" blue="0.72769862409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <state key="normal" title="Tap to Select multiple Images ">
+                                            <color key="titleColor" red="0.093241550029999995" green="0.14796799420000001" blue="0.27723690870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSingle" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Ej2-aa-Yxy"/>
+                                    <constraint firstItem="Wau-wC-7WF" firstAttribute="leading" secondItem="VT9-Xd-VGv" secondAttribute="leading" id="KJP-oY-vS7"/>
+                                    <constraint firstItem="Wau-wC-7WF" firstAttribute="top" secondItem="VT9-Xd-VGv" secondAttribute="top" id="VoG-0p-mDf"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wau-wC-7WF" secondAttribute="bottom" id="XZM-Ru-ldR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wau-wC-7WF" secondAttribute="trailing" id="jJB-dL-6T9"/>
+                                    <constraint firstAttribute="height" constant="128" id="mPk-GZ-IbS"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Single Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0y-gy-RBh">
+                                <rect key="frame" x="132" y="38" width="99" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VT9-Xd-VGv" firstAttribute="leading" secondItem="vkr-n1-PVF" secondAttribute="leading" id="H6w-lf-c2n"/>
+                            <constraint firstItem="k0y-gy-RBh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="18" id="Lrn-jQ-il2"/>
+                            <constraint firstItem="VT9-Xd-VGv" firstAttribute="top" secondItem="vkr-n1-PVF" secondAttribute="bottom" constant="57" id="cih-Wi-FZx"/>
+                            <constraint firstItem="vkr-n1-PVF" firstAttribute="top" secondItem="k0y-gy-RBh" secondAttribute="bottom" constant="25" id="dbw-Px-8E1"/>
+                            <constraint firstItem="VT9-Xd-VGv" firstAttribute="trailing" secondItem="vkr-n1-PVF" secondAttribute="trailing" id="ozx-Rf-t9c"/>
+                            <constraint firstItem="vkr-n1-PVF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ugV-sh-9K2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnMultipleImages" destination="Wau-wC-7WF" id="rWy-ai-LRD"/>
+                        <outlet property="btnSinglebutton" destination="owh-oD-h8Y" id="1Jj-x4-sD9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
