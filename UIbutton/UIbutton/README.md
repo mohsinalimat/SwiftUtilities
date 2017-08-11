@@ -2,9 +2,9 @@
 
 ### Main purpose of this class is to store images in file managers and store paths in array and return that array of paths*  to class through  delegate  or closure
 
-##paths*  :  images are going to save in /tmp/UIMultiplePhoto/  of app
+## paths*  :  images are going to save in /tmp/UIMultiplePhoto/  of app
 
-##to empty the UIMultiplePhoto follder use class function : removeCache()
+## to empty the UIMultiplePhoto follder use class function : removeCache()
 
 
  Use this below line to .plist .Why? To have access from the user to open the Gallery or Camera
@@ -41,5 +41,9 @@ Nuke.loadImage(with: url, into: self.imgeVUerPic)
 }
 ```
 ## UIPart
+### Single Image
+![alt text](https://github.com/vijayvir/SwiftUtilities/blob/master/CountryCodes/CountryCodes/counrtyCodeSnapshot.png "Single Title Text 1")
 
-![alt text](https://github.com/vijayvir/SwiftUtilities/blob/master/CountryCodes/CountryCodes/counrtyCodeSnapshot.png "Logo Title Text 1")
+###  UIMultiplePhoto Image
+
+![alt text](https://github.com/vijayvir/SwiftUtilities/blob/master/CountryCodes/CountryCodes/counrtyCodeSnapshot.png "UIMultiplePhoto Title Text 1")

@@ -16,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1112AE011F3DBA8F0041F270 /* Simulator Screen Shot - iPhone 7 Plus - 2017-08-11 at 15.41.55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 7 Plus - 2017-08-11 at 15.41.55.png"; sourceTree = "<group>"; };
+		1112AE021F3DBA8F0041F270 /* Simulator Screen Shot - iPhone 7 Plus - 2017-08-11 at 15.42.21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 7 Plus - 2017-08-11 at 15.42.21.png"; sourceTree = "<group>"; };
 		11201A151F3D8F6800B548DD /* UIbutton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIbutton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11201A181F3D8F6800B548DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11201A1A1F3D8F6800B548DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,8 @@
 				11201A1F1F3D8F6800B548DD /* Assets.xcassets */,
 				11201A211F3D8F6800B548DD /* LaunchScreen.storyboard */,
 				11201A241F3D8F6800B548DD /* Info.plist */,
+				1112AE011F3DBA8F0041F270 /* Simulator Screen Shot - iPhone 7 Plus - 2017-08-11 at 15.41.55.png */,
+				1112AE021F3DBA8F0041F270 /* Simulator Screen Shot - iPhone 7 Plus - 2017-08-11 at 15.42.21.png */,
 			);
 			path = UIbutton;
 			sourceTree = "<group>";
@@ -267,6 +271,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UIbutton/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pantlia.UIbutton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -279,6 +284,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UIbutton/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pantlia.UIbutton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
