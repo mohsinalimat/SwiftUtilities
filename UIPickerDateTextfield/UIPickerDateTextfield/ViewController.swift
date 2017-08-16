@@ -12,11 +12,9 @@ class ViewController: UIViewController {
 
 	@IBOutlet weak var txtDate: LeoUIDatePickerTextField!
 	
-	
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
-		
 		
 		txtDate.closureEditingDidBegin = { date in
 			

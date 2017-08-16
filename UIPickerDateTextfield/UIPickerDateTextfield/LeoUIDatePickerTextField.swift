@@ -9,8 +9,7 @@
 import UIKit
 
 enum LeoUIDatePickerTextFieldDateFormatType {
-	
-	
+
 	case yyyyMMdd
 	
 	case ddMMyyyy

@@ -2,7 +2,7 @@
 
 ## Why this class is made ?
  sometimes we need a date from date picker and to show this date in ui and pass to server's database.
-In normal approach we make a textfield and the picker view and bind picker view data to date picker . This process is time consumming and for every screens , we have to copy paste the code . But in `UIDatePickerTextfield` all things are bind in one class of textfiled and developer get the desire output in every state .
+In normal approach we make a textfield and the picker view and bind picker view data totext field  . This process is time consumming and for every screens , we have to copy paste the code . But in `UIDatePickerTextfield` all things are bind in one class of textfiled and developer get the desire output in every state  through reactor approach .
 
  ## How to use this class
     *   Set class in storyboard
@@ -17,7 +17,7 @@ In normal approach we make a textfield and the picker view and bind picker view 
      - Developer have option to set two type of format :
 		    - First -> that to show on the Device.
 				- Second -> format that to send on server .
-	   These format can be set through Storyboard or code
+	   These format can be set through Storyboard or code current date from textfield .
 	
  ```swift
    @IBInspectable var uiDateFormat: String
