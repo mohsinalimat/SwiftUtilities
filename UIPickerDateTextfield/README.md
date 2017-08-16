@@ -1,8 +1,8 @@
 #  UIDatePickerTextfield
 
 ## Why this class is made ?
-       sometimes we need a date from date picker and to show this date in ui and pass to server's database.
-			In normal approach we make a textfield and the picker view and bind picker view data to date picker . This process is time consumming and for every screens , we have to copy paste the code . But in `UIDatePickerTextfield` all things are bind in one class of textfiled and developer get the desire output in every state .
+ sometimes we need a date from date picker and to show this date in ui and pass to server's database.
+In normal approach we make a textfield and the picker view and bind picker view data to date picker . This process is time consumming and for every screens , we have to copy paste the code . But in `UIDatePickerTextfield` all things are bind in one class of textfiled and developer get the desire output in every state .
 
  ## How to use this class
     *   Set class in storyboard
@@ -28,7 +28,7 @@
 
    In any class
    
-    ```swift
+``` swift
     
     @IBOutlet weak var txtDate: LeoUIDatePickerTextField!
     
@@ -63,10 +63,11 @@
     
     txtDate.setDate(date: Date(), animated: true)
     }
-    ```
+```
+
 ## UIPart
 
-###  Date picker 
+###  Date picker
 
 ![alt text](https://github.com/vijayvir/SwiftUtilities/blob/master/UIPickerDateTextfield/UIPickerDateTextfield/Assets.xcassets/DatePicker.imageset/Simulator%20Screen%20Shot%20Aug%2016%2C%202017%20at%201.21.11%20PM.png "Single Title Text 1")
     
