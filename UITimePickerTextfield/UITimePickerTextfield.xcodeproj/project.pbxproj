@@ -18,6 +18,7 @@
 /* Begin PBXFileReference section */
 		11137C741F445C9600554888 /* Screen Shot 2017-08-16 at 12.06.08 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-08-16 at 12.06.08 PM.png"; sourceTree = "<group>"; };
 		11137C751F44639D00554888 /* Screen Shot 2017-08-16 at 4.52.31 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-08-16 at 4.52.31 PM.png"; sourceTree = "<group>"; };
+		11137C761F44643C00554888 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		11CE12C01F44564900443CBE /* UITimePickerTextfield.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITimePickerTextfield.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CE12C31F44564900443CBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11CE12C51F44564900443CBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +43,7 @@
 		11CE12B71F44564900443CBE = {
 			isa = PBXGroup;
 			children = (
+				11137C761F44643C00554888 /* README.md */,
 				11CE12C21F44564900443CBE /* UITimePickerTextfield */,
 				11CE12C11F44564900443CBE /* Products */,
 			);
