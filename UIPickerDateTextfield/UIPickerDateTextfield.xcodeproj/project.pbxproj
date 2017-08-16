@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1106F9351F442E7100818356 /* DateFormats.png in Resources */ = {isa = PBXBuildFile; fileRef = 1106F9341F442E7100818356 /* DateFormats.png */; };
-		11F795C01F441166005D74D4 /* LeoUIDatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F795BF1F441166005D74D4 /* LeoUIDatePickerTextField.swift */; };
+		11CE12DA1F4456AD00443CBE /* LeoUIDatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CE12D91F4456AD00443CBE /* LeoUIDatePickerTextField.swift */; };
 		11FDE3AD1F440A8000793C04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FDE3AC1F440A8000793C04 /* AppDelegate.swift */; };
 		11FDE3AF1F440A8000793C04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FDE3AE1F440A8000793C04 /* ViewController.swift */; };
 		11FDE3B21F440A8000793C04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FDE3B01F440A8000793C04 /* Main.storyboard */; };
@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		1106F9341F442E7100818356 /* DateFormats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DateFormats.png; sourceTree = "<group>"; };
 		11CE12B61F44362100443CBE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		11F795BF1F441166005D74D4 /* LeoUIDatePickerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeoUIDatePickerTextField.swift; sourceTree = "<group>"; };
+		11CE12D91F4456AD00443CBE /* LeoUIDatePickerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeoUIDatePickerTextField.swift; sourceTree = "<group>"; };
 		11FDE3A91F440A8000793C04 /* UIPickerDateTextfield.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIPickerDateTextfield.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FDE3AC1F440A8000793C04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11FDE3AE1F440A8000793C04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,7 +43,6 @@
 		11F795BE1F44114D005D74D4 /* ImportThis */ = {
 			isa = PBXGroup;
 			children = (
-				11F795BF1F441166005D74D4 /* LeoUIDatePickerTextField.swift */,
 				1106F9341F442E7100818356 /* DateFormats.png */,
 			);
 			name = ImportThis;
@@ -71,6 +70,7 @@
 			children = (
 				11FDE3AC1F440A8000793C04 /* AppDelegate.swift */,
 				11FDE3AE1F440A8000793C04 /* ViewController.swift */,
+				11CE12D91F4456AD00443CBE /* LeoUIDatePickerTextField.swift */,
 				11F795BE1F44114D005D74D4 /* ImportThis */,
 				11FDE3B01F440A8000793C04 /* Main.storyboard */,
 				11FDE3B31F440A8000793C04 /* Assets.xcassets */,
@@ -154,7 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11FDE3AF1F440A8000793C04 /* ViewController.swift in Sources */,
-				11F795C01F441166005D74D4 /* LeoUIDatePickerTextField.swift in Sources */,
+				11CE12DA1F4456AD00443CBE /* LeoUIDatePickerTextField.swift in Sources */,
 				11FDE3AD1F440A8000793C04 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
