@@ -1,6 +1,6 @@
 //
 //  SkyFloatingLabelDatePickerTextField.swift
-//  MedicalApp
+//
 //
 //  Created by Apple on 22/12/16.
 //  Copyright © 2016 vijayvirSingh. All rights reserved.
@@ -44,7 +44,6 @@ class LeoUIDatePickerTextField: UITextField {
 	
     @IBInspectable var serverDateFormat: String = LeoUIDatePickerTextFieldDateFormatType.yyyyMMdd.format
 
-	
 	  @IBInspectable var leoTag: Int = 4
 
 	  var closureEditingDidBegin : ((String) -> Void)?

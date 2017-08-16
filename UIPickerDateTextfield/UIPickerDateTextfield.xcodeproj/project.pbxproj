@@ -18,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		1106F9341F442E7100818356 /* DateFormats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DateFormats.png; sourceTree = "<group>"; };
+		11CE12B61F44362100443CBE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		11F795BF1F441166005D74D4 /* LeoUIDatePickerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeoUIDatePickerTextField.swift; sourceTree = "<group>"; };
 		11FDE3A91F440A8000793C04 /* UIPickerDateTextfield.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIPickerDateTextfield.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FDE3AC1F440A8000793C04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		11FDE3A01F440A8000793C04 = {
 			isa = PBXGroup;
 			children = (
+				11CE12B61F44362100443CBE /* README.md */,
 				11FDE3AB1F440A8000793C04 /* UIPickerDateTextfield */,
 				11FDE3AA1F440A8000793C04 /* Products */,
 			);
